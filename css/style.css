@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+:root{
+    --colorOne: #fcfbceda;
+    --colorTwo: #ffc06df9;
+    --colorThree: #484850;
+    --colorFour: #ff8091;
+    --colorFive: #525252d0;
+    --colorSix: #5472f7ba;
+    --colorSeven: #ff40a0ec;
+    --colorEight: #222;
+}
+.fan{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:  auto;
+    overflow: hidden;
+}
+label{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    background-color: var(--colorFour);
+    border-radius: 50%;
+    animation: fan_run 1s linear infinite paused;
+    z-index: 5;
+    pointer-events: none;
+}
+@keyframes fan_run {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+label::before{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    background-color: var(--colorTwo);
+    border-radius: 50%;
+    border: 10px solid var(--colorThree);
+}
+span{
+    position: absolute;
+    display: block;
+    width: 90px;
+    height: 140px;
+    background-color: var(--colorSix);
+    border-radius: 54% 45% 100% 0% / 30% 20% 60% 20%;
+    box-shadow: inset 2px 3px 3px #000;
+    z-index: -3;
+}
+span::after{
+    position: absolute;
+}
+span:nth-child(1){
+    bottom: 35px;
+    left: 35px;
+}
+span:nth-child(2){
+    transform: rotate(240deg);
+    right: 70px;
+    bottom: -30px;
+}
+span:nth-child(3){
+    transform: rotate(120deg);
+    left: 30px;
+    bottom: -105px;
+}
+input:checked ~ label{
+    animation-play-state: running;
+}
+.stand{
+    position: absolute;
+    top: 210px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 220px;
+    background-color: var(--colorFive);
+    border-radius: 30px;
+    pointer-events: none;
+}
+.stand::before{
+    position: absolute;
+    content: '';
+    bottom: -30px;
+    left: -65px;
+    right: -20px;
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    background-color: var(--colorTwo);
+    border-radius: 20% 20% 0 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+.stand::after{
+    position: absolute;
+    content: 'ON/OFF';
+    bottom: -10px;
+    left: -43px;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 600;
+    
+}
+.fan input{
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    left: 0;
+    margin: 0 auto;
+    appearance: none;
+    width: 25px;
+    height: 30px;
+    background-color: var(--colorFour);
+    color:#000;
+    border-radius: 5px 5px 0 0;
+    opacity: 0.9;
+    cursor: pointer;
+}
+input:checked{
+    bottom: 25px;
+}
