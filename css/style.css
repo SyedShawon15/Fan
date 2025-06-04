@@ -14,12 +14,14 @@ body{
     --colorEight: #222;
 }
 .fan{
+    width: 500px;
+    height: 500px;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    margin:  auto;
+    margin:  0 auto;
     overflow: hidden;
 }
 label{
@@ -135,6 +137,12 @@ input:checked ~ label{
     border-radius: 5px 5px 0 0;
     opacity: 0.9;
     cursor: pointer;
+    border: none;
+    outline: none;
+}
+.fan input:focus{
+    border: none;
+    outline: none;
 }
 input:checked{
     bottom: 25px;
