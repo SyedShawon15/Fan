@@ -14,15 +14,12 @@ body{
     --colorEight: #222;
 }
 .fan{
-    width: 500px;
-    height: 500px;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin:  auto;
-    overflow: hidden;
 }
 label{
     position: absolute;
